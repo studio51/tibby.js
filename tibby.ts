@@ -38,6 +38,12 @@ export default class Tibby {
         this.setTab(tabTrigger)
       })
     })
+    
+    let that = this;
+
+    window.onhashchange = function () {
+      that.checkCurrentLocationHash(that.options);
+    };
 
     return true;
   }
